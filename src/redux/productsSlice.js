@@ -82,8 +82,11 @@ const productsSlice = createSlice({
       .addCase(fetchProductsThunk.fulfilled, (state, action) => {
         state.loading = false;
         state.items = action.payload;
+        state.error = null;
       })
       .addCase(fetchProductsThunk.rejected, (state, action) => {
+        // Ignore aborted requests (e.g. from StrictMode unmount cleanups)
+        if (action.meta.aborted) return;
         state.loading = false;
         state.error = action.payload || action.error.message || 'Something went wrong';
       })
@@ -96,8 +99,10 @@ const productsSlice = createSlice({
       .addCase(fetchProductDetailThunk.fulfilled, (state, action) => {
         state.singleLoading = false;
         state.singleProduct = action.payload;
+        state.singleError = null;
       })
       .addCase(fetchProductDetailThunk.rejected, (state, action) => {
+        if (action.meta.aborted) return;
         state.singleLoading = false;
         state.singleError = action.payload || action.error.message || 'Something went wrong';
       });
