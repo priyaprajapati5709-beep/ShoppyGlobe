@@ -2,7 +2,7 @@
 
 ShoppyGlobe is a polished e-commerce web app built with React, Redux Toolkit, and React Router. It delivers a smooth shopping experience through product browsing, detailed pages, cart management, smart filtering, sorting, and a sample checkout flow. Product information is pulled from [dummyjson.com/products](https://dummyjson.com/products).
 
-Repository: [ShoppyGlobe Repository](https://github.com//ShoppyGlobe)
+Repository: [ShoppyGlobe Repository](https://github.com/priyaprajapati5709-beep/ShoppyGlobe)
 
 ## Overview
 
