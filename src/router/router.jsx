@@ -48,6 +48,6 @@ const router = createBrowserRouter([
     ),
     children: childRoutes,
   },
-]);
+], { basename: import.meta.env.BASE_URL });
 
 export default router;
